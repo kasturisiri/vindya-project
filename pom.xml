@@ -1,12 +1,25 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>in.anu</groupId>
   <artifactId>Siri-Vindya</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
+
   <name>Siri-Vindya Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <properties>
+    <sonar.host.url>http://3.109.108.106:9000/</sonar.host.url>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,7 +28,28 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
+    <plugins>
+
+      <!-- Maven WAR Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.4.0</version>
+      </plugin>
+
+      <!-- SonarQube Maven Plugin -->
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>5.8.0.7211</version>
+      </plugin>
+
+    </plugins>
+
     <finalName>Siri-Vindya</finalName>
   </build>
+
 </project>
+```
